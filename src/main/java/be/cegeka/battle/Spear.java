@@ -1,6 +1,9 @@
 package be.cegeka.battle;
 
 
-public class Spear {
+public class Spear extends Weapon {
 
+    public Spear() {
+        this.weaponDamage = 2;
+    }
 }

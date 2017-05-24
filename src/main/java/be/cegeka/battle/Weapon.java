@@ -8,10 +8,7 @@ public class Weapon {
     public int weaponDamage;
 
 
-    public Weapon(String weaponName, int weaponDamage) {
-
-        this.weaponName = weaponName;
-        this.weaponDamage = weaponDamage;
+    public Weapon() {
     }
 
 

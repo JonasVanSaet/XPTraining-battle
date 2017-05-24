@@ -28,15 +28,22 @@ public class SoldierTest {
         new Soldier("   ");
     }
 
-    /*
-     * @Test public void SoldierMustHaveAWeapon() { Soldier soldier = new Soldier("name"); soldier.getWeapon();
-     * assertThat(soldier.getWeapon()).isEqualTo("Bare fist"); }
-     */
 
-    /*
-     * @Test public void SoldierMustHaveAWeapon() { Soldier soldier = new Soldier("name"); soldier.getWeapon();
-     * assertThat(soldier.getWeapon().getClass()).isEqualTo(Axe.class); }
-     */
+    @Test
+    public void soldierMustHaveAWeapon_defaultIsBareFists() {
+        Soldier soldier = new Soldier("name");
+        soldier.getWeapon();
+        assertThat(soldier.getWeapon().getClass()).isEqualTo(BareFist.class);
+    }
+
+
+    @Test
+    public void SoldierMustHaveAWeapon_setToAxe() {
+        Soldier soldier = new Soldier("name");
+        soldier.setWeapon(new Axe());
+        soldier.getWeapon();
+        assertThat(soldier.getWeapon().getClass()).isEqualTo(Axe.class);
+    }
 
 
 }
