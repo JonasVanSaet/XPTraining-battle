@@ -7,6 +7,7 @@ import org.apache.commons.lang3.Validate;
 public class Soldier {
 
     private String name;
+    // private Weapon weapon;
 
     public Soldier(String name) {
         Validate.isTrue(isNotBlank(name));
@@ -17,5 +18,9 @@ public class Soldier {
     String getName() {
         return this.name;
     }
-    // ceposkc
+
+    /*
+     * public Weapon getWeapon() { return weapon; }
+     */
+
 }
