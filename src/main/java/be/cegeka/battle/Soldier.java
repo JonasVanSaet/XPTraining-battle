@@ -31,5 +31,12 @@ public class Soldier {
         this.weapon = weapon;
     }
 
+    public boolean fight(Soldier soldier) {
+        if (soldier.getWeapon().getWeaponDamage() > weapon.getWeaponDamage()) {
+            return false;
+        }
+        return true;
+
+    }
 
 }

@@ -31,5 +31,35 @@ public class Army {
         soldiers.remove(0);
     }
 
+    public Soldier getFrontMan() {
+        return soldiers.get(0);
+    }
+
+    public boolean fightWar(Army army) {
+
+        while (army.getSoldiers().size() > 0) {
+            if (getFrontMan().fight(army.getFrontMan())) {
+                army.killFrontman();
+            } else {
+                killFrontman();
+            }
+            if (soldiers.size() <= 0) {
+                System.out.println("lose");
+                return false;
+            }
+        }
+        System.out.println("win");
+        return true;
+
+
+    }
+
+    public boolean containsSoldiers() {
+        if (soldiers.size() > 0) {
+            return true;
+        }
+        return false;
+    }
+
 
 }
