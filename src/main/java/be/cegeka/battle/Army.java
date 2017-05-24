@@ -13,6 +13,8 @@ public class Army {
 
     private List<Soldier> soldiers = new ArrayList<Soldier>();
 
+    private IHeadquarters headquarters;
+
     public Army(String name) {
         Validate.isTrue(isNotBlank(name));
 
@@ -20,6 +22,7 @@ public class Army {
     }
 
     public void addSoldier(Soldier soldier) {
+
         soldiers.add(soldier);
     }
 
@@ -29,6 +32,35 @@ public class Army {
 
     public void killFrontman() {
         soldiers.remove(0);
+    }
+
+    public Soldier getFrontMan() {
+        return soldiers.get(0);
+    }
+
+    public boolean fightWar(Army army) {
+
+        if (army.containsSoldiers()) {
+            if (containsSoldiers()) {
+                if (getFrontMan().fight(army.getFrontMan())) {
+                    army.killFrontman();
+                } else {
+                    killFrontman();
+                }
+                fightWar(army);
+            } else {
+                return false;
+            }
+        }
+        return true;
+
+    }
+
+    public boolean containsSoldiers() {
+        if (soldiers.size() > 0) {
+            return true;
+        }
+        return false;
     }
 
 
