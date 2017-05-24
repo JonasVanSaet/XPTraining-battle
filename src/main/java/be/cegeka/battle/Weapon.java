@@ -13,6 +13,7 @@ public class Weapon {
 
 
     public int getWeaponDamage() {
+
         return weaponDamage;
     }
 

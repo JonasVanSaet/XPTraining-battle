@@ -31,5 +31,11 @@ public class Soldier {
         this.weapon = weapon;
     }
 
+    public int getWeaponDamage() {
+
+        return this.weapon.getWeaponDamage();
+
+    }
+
 
 }

@@ -5,6 +5,7 @@ public class Axe extends Weapon {
 
     public Axe() {
         this.weaponDamage = 3;
+        this.weaponName = "Axe";
     }
 
 }
