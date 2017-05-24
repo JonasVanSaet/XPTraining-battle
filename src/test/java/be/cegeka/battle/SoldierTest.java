@@ -38,4 +38,5 @@ public class SoldierTest {
      * assertThat(soldier.getWeapon().getClass()).isEqualTo(Axe.class); }
      */
 
+
 }
