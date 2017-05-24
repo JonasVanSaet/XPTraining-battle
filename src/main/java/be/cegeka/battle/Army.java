@@ -13,6 +13,8 @@ public class Army {
 
     private List<Soldier> soldiers = new ArrayList<Soldier>();
 
+    private IHeadquarters headquarters;
+
     public Army(String name) {
         Validate.isTrue(isNotBlank(name));
 
@@ -20,6 +22,7 @@ public class Army {
     }
 
     public void addSoldier(Soldier soldier) {
+
         soldiers.add(soldier);
     }
 
@@ -37,20 +40,19 @@ public class Army {
 
     public boolean fightWar(Army army) {
 
-        while (army.getSoldiers().size() > 0) {
-            if (getFrontMan().fight(army.getFrontMan())) {
-                army.killFrontman();
+        if (army.containsSoldiers()) {
+            if (containsSoldiers()) {
+                if (getFrontMan().fight(army.getFrontMan())) {
+                    army.killFrontman();
+                } else {
+                    killFrontman();
+                }
+                fightWar(army);
             } else {
-                killFrontman();
-            }
-            if (soldiers.size() <= 0) {
-                System.out.println("lose");
                 return false;
             }
         }
-        System.out.println("win");
         return true;
-
 
     }
 
